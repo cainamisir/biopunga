@@ -105,32 +105,48 @@ export default function MainPage() {
                     href="#home"
                     className="mt-auto mb-auto"
                     style={{
-                        color: "#81F495",
-                        fontSize: "1.3rem",
+                        color: "green",
+                        fontSize: "1.4rem",
                         fontWeight: "500",
                     }}
                 >
-                    Bio Punga
+                    <img src="logov2.png" style={{ height: "13rem" }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto ml-auto mt-auto mb-auto">
-                        <Nav.Link onClick={scrollCine} className="pl-3 pr-3">
+                    <Nav className=" ml-auto mb-5">
+                        <Nav.Link
+                            onClick={scrollCine}
+                            className="pl-3 pr-3 "
+                            style={{ color: "black", fontSize: "1.1rem" }}
+                        >
                             Cine suntem?
                         </Nav.Link>
-                        <Nav.Link href="#pricing" className="pl-3 pr-3">
+                        <Nav.Link
+                            href="#pricing"
+                            className="pl-3 pr-3"
+                            style={{ color: "black", fontSize: "1.1rem" }}
+                        >
                             Certificate
                         </Nav.Link>
-                        <Nav.Link onClick={scrollPret} className="pl-3 pr-3">
+                        <Nav.Link
+                            onClick={scrollPret}
+                            className="pl-3 pr-3"
+                            style={{ color: "black", fontSize: "1.1rem" }}
+                        >
                             Preturi
                         </Nav.Link>
-                        <Nav.Link onClick={scrollContact} className="pl-3 pr-3">
+                        <Nav.Link
+                            onClick={scrollContact}
+                            className="pl-3 pr-3"
+                            style={{ color: "black", fontSize: "1.1rem" }}
+                        >
                             Contact
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <Row className="mt-5">
+            <Row>
                 <Col xl={6} className="mt-auto mb-auto">
                     <div className="mt-auto mb-auto">
                         <h1
@@ -173,7 +189,7 @@ export default function MainPage() {
                     </div>
                 </Col>
                 <Col xl={6}>
-                    <img src="pungabio.PNG" width="80%" />
+                    <img src="pungabio-min.PNG" width="80%" />
                 </Col>
                 <Col xl={12} className="mt-4">
                     <h2 style={{ fontWeight: "300" }}>
@@ -202,7 +218,7 @@ export default function MainPage() {
                             >
                                 Este 100% biodegradabila fiind produsa din
                                 amidon de porumb si compostabila in orice centru
-                                specializat
+                                specializat.
                             </p>
                         </Card.Body>
                     </Card>
@@ -313,7 +329,7 @@ export default function MainPage() {
                             <Form.Control
                                 className="ml-auto mr-auto"
                                 as="select"
-                                style={{ textAlign: "center", width: "70%" }}
+                                style={{ textAlign: "center", width: "80%" }}
                                 value={capacitate}
                                 onChange={(e) => {
                                     setCapacitate(e.target.value);
@@ -347,7 +363,7 @@ export default function MainPage() {
                         <span style={{ color: "grey" }}>TVA inclus</span>
                     </p>
                     <p>
-                        Pretul total pentru toata cantitatea introdusa este:{" "}
+                        Pretul pentru toata cantitatea introdusa este:{" "}
                         <span style={{ color: "green", fontWeight: "700" }}>
                             {(price * 1.19 * cantitate)
                                 .toFixed(4)
