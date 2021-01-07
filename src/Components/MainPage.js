@@ -5,8 +5,18 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
+import { useState, useRef } from "react";
 export default function MainPage() {
+    const pretRef = useRef(null);
+    const scrollPret = () =>
+        pretRef.current.scrollIntoView({ block: "center" });
+
+    const cineRef = useRef(null);
+    const scrollCine = () => cineRef.current.scrollIntoView({ block: "end" });
+
+    const contactRef = useRef(null);
+    const scrollContact = () => contactRef.current.scrollIntoView();
+
     const [cantitate, setCantitate] = useState("1000");
     const [capacitate, setCapacitate] = useState(
         "3 KG 14 microni, 22 + 6 + 6 x 40cm"
@@ -105,16 +115,16 @@ export default function MainPage() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto ml-auto mt-auto mb-auto">
-                        <Nav.Link href="#features" className="pl-3 pr-3">
+                        <Nav.Link onClick={scrollCine} className="pl-3 pr-3">
                             Cine suntem?
                         </Nav.Link>
                         <Nav.Link href="#pricing" className="pl-3 pr-3">
                             Certificate
                         </Nav.Link>
-                        <Nav.Link href="#pricing" className="pl-3 pr-3">
+                        <Nav.Link onClick={scrollPret} className="pl-3 pr-3">
                             Preturi
                         </Nav.Link>
-                        <Nav.Link href="#pricing" className="pl-3 pr-3">
+                        <Nav.Link onClick={scrollContact} className="pl-3 pr-3">
                             Contact
                         </Nav.Link>
                     </Nav>
@@ -175,8 +185,12 @@ export default function MainPage() {
                         Uite care sunt avantajele BioPungii{" "}
                     </h4>
                 </Col>
-                <Col sm={4} className="mt-3 mb-3">
-                    <Card>
+                <Col sm={4} className="mt-3 mb-3" ref={cineRef}>
+                    <Card
+                        style={{
+                            boxShadow: "0px 6px 13px 0px rgba(0,0,0,0.1)",
+                        }}
+                    >
                         <Card.Body>
                             <Card.Title>
                                 <img src="bio.svg" width="60px" />
@@ -194,7 +208,11 @@ export default function MainPage() {
                     </Card>
                 </Col>
                 <Col sm={4} className="mt-3 mb-3">
-                    <Card>
+                    <Card
+                        style={{
+                            boxShadow: "0px 6px 13px 0px rgba(0,0,0,0.1)",
+                        }}
+                    >
                         <Card.Body>
                             <Card.Title>
                                 <img src="eco.svg" width="60px" />
@@ -212,7 +230,11 @@ export default function MainPage() {
                     </Card>
                 </Col>
                 <Col sm={4} className="mt-3 mb-3">
-                    <Card>
+                    <Card
+                        style={{
+                            boxShadow: "0px 6px 13px 0px rgba(0,0,0,0.1)",
+                        }}
+                    >
                         <Card.Body>
                             <Card.Title>
                                 <img src="tree.svg" width="60px" />
@@ -230,17 +252,29 @@ export default function MainPage() {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col xl={12} className="mt-5">
+                <Col xl={12} className="mt-5" ref={pretRef}>
                     <h3 style={{ fontWeight: "300" }}>
                         {" "}
                         Cate pungi trebuie sa comanzi?
                     </h3>
                     <h5 style={{ fontWeight: "400" }}> Cate vrei! </h5>
                     <p>
-                        La noi , comanda minima este de 1000 de pungi, dar cu
-                        cat comanzi mai multe, cu atat pretul va fi mai
-                        avantajos! <br></br>Am facut special pentru tine un
-                        calculator ca sa fie totul mai usor.
+                        La noi, comanda minima este de 1000 de pungi, dar cu cat
+                        comanzi mai multe, cu atat pretul va fi mai avantajos!{" "}
+                        <br></br>Am facut special pentru tine un calculator ca
+                        sa fie totul mai usor.
+                    </p>
+                    <p>
+                        {" "}
+                        Totusi daca vrei sa descarci oferta completa, o ai{" "}
+                        <a
+                            href="BioPunga.docx"
+                            download
+                            style={{ color: "#81F495", fontWeight: "500" }}
+                        >
+                            aici
+                        </a>
+                        .
                     </p>
                 </Col>
                 <Col md={6} className="mt-5 mb-5">
@@ -257,7 +291,6 @@ export default function MainPage() {
                             </Form.Label>
                             <Form.Control
                                 className="ml-auto mr-auto"
-                                autoFocus
                                 style={{ textAlign: "center", width: "60%" }}
                                 min="1000"
                                 type="number"
@@ -280,7 +313,7 @@ export default function MainPage() {
                             <Form.Control
                                 className="ml-auto mr-auto"
                                 as="select"
-                                style={{ textAlign: "center", width: "60%" }}
+                                style={{ textAlign: "center", width: "70%" }}
                                 value={capacitate}
                                 onChange={(e) => {
                                     setCapacitate(e.target.value);
@@ -317,6 +350,27 @@ export default function MainPage() {
                         <span style={{ color: "green", fontWeight: "700" }}>
                             {(price * cantitate).toFixed(3)} RON
                         </span>
+                    </p>
+                </Col>
+                <Col xl={12} ref={contactRef}>
+                    <h3 style={{ fontWeight: "300" }}>
+                        Iti place oferta noastra?
+                    </h3>
+                    <h4 style={{ fontWeight: "300" }}>
+                        {" "}
+                        Ne gasesti in mai multe locuri:
+                    </h4>
+                    <p>
+                        Email:{" "}
+                        <a href="mailto:biopunga@gmail.com">
+                            biopunga@gmail.com
+                        </a>
+                        <br></br>
+                        Instagram:{" "}
+                        <a href="https://www.instagram.com/biopunga/">
+                            {" "}
+                            @BioPunga
+                        </a>
                     </p>
                 </Col>
             </Row>
