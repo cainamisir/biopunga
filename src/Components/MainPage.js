@@ -365,7 +365,7 @@ export default function MainPage() {
                     <p>
                         Pretul pentru toata cantitatea introdusa este:{" "}
                         <span style={{ color: "green", fontWeight: "700" }}>
-                            {(price * 1.19 * cantitate)
+                            {((price * 1.19).toFixed(4) * cantitate)
                                 .toFixed(4)
                                 .replace(".", ",")}{" "}
                             RON
@@ -389,11 +389,13 @@ export default function MainPage() {
                         <br></br>
                         Telefon: <a href="tel:+40769683696">0769 683 696</a>
                         <br></br>
-                        Instagram:{" "}
-                        <a href="https://www.instagram.com/biopunga/">
-                            {" "}
-                            @BioPunga
+                        <br></br>
+                        <a href="https://www.facebook.com/biopunga">
+                            <img src="Facebook-logo-500x350.png" width="60px" />
                         </a>
+                        <a href="https://www.instagram.com/biopunga/">
+                            <img src="1024px-Instagram_icon.png" width="40px" />
+                        </a>{" "}
                     </p>
                 </Col>
             </Row>
