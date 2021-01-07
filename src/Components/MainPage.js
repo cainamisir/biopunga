@@ -277,7 +277,7 @@ export default function MainPage() {
                         .
                     </p>
                 </Col>
-                <Col md={6} className="mt-5 mb-5">
+                <Col md={5} className="mt-5 mb-5">
                     <Form>
                         <Form.Group size="lg" controlId="cantitatePungi">
                             <Form.Label
@@ -337,19 +337,24 @@ export default function MainPage() {
                         </Form.Group>
                     </Form>
                 </Col>
-                <Col md={6} className="mt-auto mb-auto">
+                <Col md={7} className="mt-auto mb-auto">
                     {" "}
                     <p>
                         Pretul unitar este de:{" "}
                         <span style={{ color: "green", fontWeight: "700" }}>
-                            {price} RON{" "}
+                            {(price * 1.19).toFixed(4).replace(".", ",")} RON{" "}
                         </span>
+                        <span style={{ color: "grey" }}>TVA inclus</span>
                     </p>
                     <p>
                         Pretul total pentru toata cantitatea introdusa este:{" "}
                         <span style={{ color: "green", fontWeight: "700" }}>
-                            {(price * cantitate).toFixed(3)} RON
-                        </span>
+                            {(price * 1.19 * cantitate)
+                                .toFixed(4)
+                                .replace(".", ",")}{" "}
+                            RON
+                        </span>{" "}
+                        <span style={{ color: "grey" }}>TVA inclus</span>
                     </p>
                 </Col>
                 <Col xl={12} ref={contactRef}>
@@ -365,6 +370,8 @@ export default function MainPage() {
                         <a href="mailto:biopunga@gmail.com">
                             biopunga@gmail.com
                         </a>
+                        <br></br>
+                        Telefon: <a href="tel:+40769683696">0769 683 696</a>
                         <br></br>
                         Instagram:{" "}
                         <a href="https://www.instagram.com/biopunga/">
