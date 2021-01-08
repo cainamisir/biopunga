@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import { useState, useRef } from "react";
+import Accordion from "react-bootstrap/Accordion";
+import Button from "react-bootstrap/Button";
 export default function MainPage() {
     const pretRef = useRef(null);
     const scrollPret = () =>
@@ -22,6 +24,9 @@ export default function MainPage() {
         "3 KG 14 microni, 22 + 6 + 6 x 40cm"
     );
     const [price, setPrice] = useState("0.16");
+    function submitForm(event) {
+        event.preventDefault();
+    }
     function computePrice(canti, cap) {
         setCantitate(canti);
         console.log(canti);
@@ -102,7 +107,7 @@ export default function MainPage() {
                 style={{ backgroundColor: "white" }}
             >
                 <Navbar.Brand
-                    href="#home"
+                    href="/"
                     className="mt-auto mb-auto"
                     style={{
                         color: "green",
@@ -123,11 +128,11 @@ export default function MainPage() {
                             Cine suntem?
                         </Nav.Link>
                         <Nav.Link
-                            href="#pricing"
+                            href="/intrebari"
                             className="pl-3 pr-3"
                             style={{ color: "black", fontSize: "1.1rem" }}
                         >
-                            Certificate
+                            Intrebari frecvente
                         </Nav.Link>
                         <Nav.Link
                             onClick={scrollPret}
@@ -294,7 +299,7 @@ export default function MainPage() {
                     </p>
                 </Col>
                 <Col md={5} className="mt-5 mb-5">
-                    <Form>
+                    <Form onSubmit={submitForm}>
                         <Form.Group size="lg" controlId="cantitatePungi">
                             <Form.Label
                                 style={{
@@ -347,7 +352,7 @@ export default function MainPage() {
                                     7 KG 18 microni, 32 + 9 + 9 x 58cm
                                 </option>
                                 <option>
-                                    9 KG 24 micrpni, 34 + 11 + 11 x 62cm
+                                    9 KG 24 microni, 34 + 11 + 11 x 62cm
                                 </option>
                             </Form.Control>
                         </Form.Group>
@@ -373,7 +378,47 @@ export default function MainPage() {
                         <span style={{ color: "grey" }}>TVA inclus</span>
                     </p>
                 </Col>
-                <Col xl={12} ref={contactRef}>
+                <Col xl={12} className="mt-5 mb-5">
+                    <h2 style={{ fontWeight: "300" }}>
+                        {" "}
+                        Pungi bio cu designul tau!{" "}
+                    </h2>
+                </Col>
+                <Col md={6}>
+                    {" "}
+                    <img
+                        src="pungabackground.png"
+                        style={{ height: "25rem" }}
+                    />
+                </Col>
+                <Col md={6} className="mt-auto mb-auto">
+                    {" "}
+                    <p>
+                        {" "}
+                        <span style={{ fontSize: "1.2rem" }}>
+                            Putem sa printam cu cerneala netoxica logoul tau pe
+                            BioPunga fara costuri aditionale!
+                        </span>
+                        <br></br>
+                        Desi produsele noastre sunt ecologice, nu inseamna ca nu
+                        tinem seama de cerintele pietii. Produsele noastre pot
+                        fi personalizate la fel ca vechea gama de produse din
+                        plastic.
+                        <br></br>
+                        <span>Contacteaza-ne pentru un design gratuit!</span>
+                        <br></br>
+                        <span style={{ color: "grey" }}>
+                            *Comanda minima pentru pungile branduite este de
+                            100.000 de pungi
+                        </span>
+                    </p>
+                </Col>
+
+                <Col
+                    xl={12}
+                    ref={contactRef}
+                    className="mt-5 ml-auto mr-auto text-center"
+                >
                     <h3 style={{ fontWeight: "300" }}>
                         Iti place oferta noastra?
                     </h3>
@@ -387,7 +432,7 @@ export default function MainPage() {
                             biopunga@gmail.com
                         </a>
                         <br></br>
-                        Telefon: <a href="tel:+40769683696">0769 683 696</a>
+                        Telefon: <a href="tel:+40711944522">0711 944 522</a>
                         <br></br>
                         <br></br>
                         <a href="https://www.facebook.com/biopunga">
