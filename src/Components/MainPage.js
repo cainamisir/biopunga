@@ -81,7 +81,7 @@ export default function MainPage() {
                 setPrice(0.305);
             }
         }
-        if (cap === "9 KG 24 micrpni, 34 + 11 + 11 x 62cm") {
+        if (cap === "9 KG 24 microni, 34 + 11 + 11 x 62cm") {
             if (canti >= 1000 && canti < 10000) {
                 setPrice(0.6);
             }
