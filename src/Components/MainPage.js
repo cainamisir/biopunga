@@ -443,6 +443,14 @@ export default function MainPage() {
                         </a>{" "}
                     </p>
                 </Col>
+                <Col>
+                    <a
+                        href="/credits"
+                        style={{ color: "whitesmoke", fontSize: "0.3rem" }}
+                    >
+                        Credits for images
+                    </a>
+                </Col>
             </Row>
         </Container>
     );
