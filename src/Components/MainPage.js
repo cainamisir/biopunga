@@ -289,7 +289,7 @@ export default function MainPage() {
                         {" "}
                         Totusi daca vrei sa descarci oferta completa, o ai{" "}
                         <a
-                            href="BioPunga.docx"
+                            href="Oferta_Biopunga.pdf"
                             download
                             style={{ color: "#81F495", fontWeight: "500" }}
                         >
