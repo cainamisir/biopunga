@@ -289,7 +289,7 @@ export default function MainPage() {
                         {" "}
                         Totusi daca vrei sa descarci oferta completa, o ai{" "}
                         <a
-                            href="Oferta_Biopunga.pdf"
+                            href="Oferta-Biopunga.pdf"
                             download
                             style={{ color: "#81F495", fontWeight: "500" }}
                         >
@@ -386,10 +386,7 @@ export default function MainPage() {
                 </Col>
                 <Col md={6}>
                     {" "}
-                    <img
-                        src="pungabackground.png"
-                        style={{ height: "25rem" }}
-                    />
+                    <img src="pungabiopers.png" style={{ height: "25rem" }} />
                 </Col>
                 <Col md={6} className="mt-auto mb-auto">
                     {" "}
